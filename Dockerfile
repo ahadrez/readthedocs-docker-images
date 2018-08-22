@@ -20,6 +20,7 @@ LABEL conda.version=$CONDA_VERSION
 # System dependencies
 RUN apt-get -y update
 RUN apt-get -y install vim software-properties-common
+RUN apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
 
 # Install requirements
 RUN apt-get -y install \
